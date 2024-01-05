@@ -78,30 +78,5 @@ Then("Tôi nhìn thấy thông báo với lỗi khi chỉ nhập họ tên {stri
     cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
 });
 
-/*
+/*abc*/
 
-sfshnfbjsdbdsdkbksdbfkdsnckjdsn ckjds
-
-*/
-
-/*
-akhiiiiiiiiiiiiii
-*/
-
-/*
-565+65+625625626
-*/
-
-/*5hdssfdfds*/
-
-/* ghec username */
-/* ghec username */
-/* ghec username */
-/* ghec username */
-/* ghec username */
-/* ghec username */
-/* ghec username */
-/* ghec username */
-/* ghec username */
-/* ghec username */
-/* ghec username */
