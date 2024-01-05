@@ -77,12 +77,10 @@ Then("Tôi nhìn thấy thông báo với lỗi khi khi để trống trường 
 Then("Tôi nhìn thấy thông báo với lỗi khi chỉ nhập họ tên {string}", (errorMessage) => {
     cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
 });
-/* 
-*/
-Then("Tôi nhìn thấy thông báo với lỗi khi chỉ nhập họ tên {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
-});
 
-Then("Tôi nhìn thấy thgdfgông báo với lỗi khi chỉ fsdvbgfbvfhfhgxv zdhdgsd họ tên {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformfgfgdfgdfgdfdfdfffgdfdation.getERR_Uvxvvpdatec).should("be.visible").contains(errorMessage);
-});
+/*
+
+sfshnfbjsdbdsdkbksdbfkdsnckjdsn ckjds
+
+*/
+
