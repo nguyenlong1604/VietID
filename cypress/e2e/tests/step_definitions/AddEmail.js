@@ -6,7 +6,7 @@ import {faker} from '@faker-js/faker';
 const AddEmail = new AddEmailUI();
 
 Then("Màn hình hiển thị đầy đủ thông tin Profile người dùng", () => {
-    cy.url().should("contain", AddEmail.getURL);//tesst
+    cy.url().should("contain", AddEmail.getURL);
 });
 
 When("Người dùng chọn tùy chọn 'Thêm Email'", () => {
