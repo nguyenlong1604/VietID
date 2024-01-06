@@ -14,5 +14,5 @@ Feature: Xóa tài khoản
     When Người dùng chọn tùy chọn 'Xóa tài khoản'
     Then Màn hình hiển thị đầy đủ thông tin thông tin Xóa tài khoản
     When Tôi nhấn nút 'ĐỒNG Ý'
-    Then Tôi quay lại trang chủ
+    Then Tôi nhìn thấy trang Đăng nhập tài khoản
 

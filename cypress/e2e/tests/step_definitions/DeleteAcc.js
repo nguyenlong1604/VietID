@@ -19,10 +19,6 @@ When("Tôi nhấn nút 'ĐỒNG Ý'", () => {
     cy.xpath(DeleteAcc.getAgree_BTN).click();
 });
 
-Then("Tôi quay lại trang chủ", () => {
-    cy.url().should("contain", "https://vietid.net/login/chooseAccount");
-});
-
 When("Tôi nhấn nút 'HỦY'", () => {
     cy.xpath(DeleteAcc.getCancel_BTN).click();
 });

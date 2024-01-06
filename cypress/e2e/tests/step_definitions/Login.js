@@ -7,17 +7,23 @@ let password;
 
 Given("Tôi đã mở trang đăng nhập VietID", function () {
   cy.visit(Login.getURL_ACC());
+  cy.xpath("//li[@class='one']").should("be.visible").and("contain", "Chỉ cần duy nhất một tài khoản ViệtID !")
+  cy.xpath("//li[@class='two']").should("be.visible").and("contain", "Bạn có thể đăng nhập các website & các ứng dụng trên di động")
+  cy.viewport(1100, 700);
 });
 
 When("Tôi nhập username {string}", (user) => {
   username = user;
   //if (user)
-  cy.get(Login.getUserName()).should("be.enabled").clear().type(username).and('have.value', username);
+  cy.get(Login.getUserName()).clear();
+  if (username) {
+    cy.get(Login.getUserName()).should("be.enabled").type(username).should('have.value', username).and('have.value', username);
+  }
 });
 
 Then("Thông tin vừa nhập được hiển thị vào textbox username", () => {
   cy.url().should("contain", Login.getURL_ACC());
-  cy.get(Login.getUserName()).should('have.value', username);  
+  cy.get(Login.getUserName()).should('have.value', username);
 });
 
 When("Tôi nhấn nút 'Tiếp tục'", () => {
@@ -30,6 +36,8 @@ Then("Tôi chuyển sang màn hình hiển thị nhập mật khẩu", () => {
 
 Then("Màn hình hiển thị đầy đủ thông tin để Nhập mật khẩu", () => {
   cy.url().should("contain", Login.getURL_PASS());
+  cy.xpath("//li[@class='one']").should("be.visible").and("contain", "Chỉ cần duy nhất một tài khoản ViệtID !")
+  cy.xpath("//li[@class='two']").should("be.visible").and("contain", "Bạn có thể đăng nhập các website & các ứng dụng trên di động")
   cy.get(Login.getPassWord()).should("be.enabled")
   cy.get(Login.getBTN_Login()).should("be.visible")
 
@@ -38,12 +46,15 @@ Then("Màn hình hiển thị đầy đủ thông tin để Nhập mật khẩu"
 When("Tôi nhập mật khẩu {string}", (pass) => {
   password = pass;
   //if (pass)
-  cy.get(Login.getPassWord()).should("be.enabled").clear().type(password).and('have.value', password);
+  cy.get(Login.getPassWord()).clear();
+  if (password) {
+    cy.get(Login.getPassWord()).should("be.enabled").type(password).should('have.value', password).and('have.value', password);
+  }
 });
 
 Then("Thông tin vừa nhập được hiển thị vào textbox mật khẩu", () => {
   cy.url().should("contain", Login.getURL_PASS());
-  cy.get(Login.getPassWord()).should('have.value', password);  
+  cy.get(Login.getPassWord()).should('have.value', password);
 });
 
 When("Tôi nhấn nút 'Đăng nhập'", () => {
@@ -59,6 +70,10 @@ Then("Tôi nhìn thấy thông báo với lỗi tài khoản không tồn tại 
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi tài khoản trống {string}", (errorMessage) => {
+  cy.xpath(Login.getERR_ACC()).should("be.visible").contains(errorMessage);
+});
+
+Then("Tôi nhìn thấy thông báo với lỗi khi nhập tài khoản có chứa ký tự đặc biệt {string}", (errorMessage) => {
   cy.xpath(Login.getERR_ACC()).should("be.visible").contains(errorMessage);
 });
 
@@ -94,6 +109,10 @@ Then("Tôi nhìn thấy thông báo với lỗi mật khẩu sai {string}", (err
   cy.xpath(Login.getERR_PASS()).should("be.visible").contains(errorMessage);
 });
 
+Then("Tôi nhìn thấy thông báo với lỗi mật khẩu không tồn tại {string}", (errorMessage) => {
+  cy.xpath(Login.getERR_PASS()).should("be.visible").contains(errorMessage);
+});
+
 Given("Tôi truy cập vào website và login thành công với username = {string} và password = {string}", function (username, password) {
   cy.visit(Login.getURL_ACC());
   cy.get(Login.getUserName()).should("be.enabled").clear().type(username).and('have.value', username);
@@ -113,6 +132,6 @@ Given("Tôi truy cập vào website và login thành công với username = {str
 
 
 // Then("Tôi nhìn thấy thông báo với lỗi {string}", (errorMessage) => {
-//   if (errorMessage) 
+//   if (errorMessage)
 //   cy.xpath(Login.getERR_ACC()).should("be.visible").contains(errorMessage);
 // });

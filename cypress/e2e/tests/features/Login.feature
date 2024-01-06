@@ -21,10 +21,17 @@ Feature: Đăng nhập VietID
 
   Scenario: Đăng nhập không thành công với tài khoản trống
     Given Tôi đã mở trang đăng nhập VietID
-    When Tôi nhập username " "
+    When Tôi nhập username ""
     Then Thông tin vừa nhập được hiển thị vào textbox username
     When Tôi nhấn nút 'Tiếp tục'
     Then Tôi nhìn thấy thông báo với lỗi tài khoản trống "Vui lòng nhập email hoặc số điện thoại."
+
+  Scenario: Đăng nhập không thành công khi nhập tài khoản có chứa ký tự đặc biệt
+    Given Tôi đã mở trang đăng nhập VietID
+    When Tôi nhập username "fdfsdf*/#@"
+    Then Thông tin vừa nhập được hiển thị vào textbox username
+    When Tôi nhấn nút 'Tiếp tục'
+    Then Tôi nhìn thấy thông báo với lỗi khi nhập tài khoản có chứa ký tự đặc biệt "Email không hợp lệ!"
 
   Scenario: Đăng nhập không thành công khi nhập với email thiếu ký tự "@"
     Given Tôi đã mở trang đăng nhập VietID
@@ -87,7 +94,7 @@ Feature: Đăng nhập VietID
     When Tôi nhấn nút 'Tiếp tục'
     Then Tôi chuyển sang màn hình hiển thị nhập mật khẩu
     Then Màn hình hiển thị đầy đủ thông tin để Nhập mật khẩu
-    When Tôi nhập mật khẩu " "
+    When Tôi nhập mật khẩu ""
     Then Thông tin vừa nhập được hiển thị vào textbox mật khẩu
     When Tôi nhấn nút 'Đăng nhập'
     Then Tôi nhìn thấy thông báo với lỗi mật khẩu trống "Vui lòng nhập mật khẩu."
@@ -100,6 +107,18 @@ Feature: Đăng nhập VietID
     Then Tôi chuyển sang màn hình hiển thị nhập mật khẩu
     Then Màn hình hiển thị đầy đủ thông tin để Nhập mật khẩu
     When Tôi nhập mật khẩu "Long-+-++*-+"
+    Then Thông tin vừa nhập được hiển thị vào textbox mật khẩu
+    When Tôi nhấn nút 'Đăng nhập'
+    Then Tôi nhìn thấy thông báo với lỗi mật khẩu sai "Mật khẩu không đúng."
+
+  Scenario: Đăng nhập không thành công với mật khẩu không tồn tại
+    Given Tôi đã mở trang đăng nhập VietID
+    When Tôi nhập username "0855662472"
+    Then Thông tin vừa nhập được hiển thị vào textbox username
+    When Tôi nhấn nút 'Tiếp tục'
+    Then Tôi chuyển sang màn hình hiển thị nhập mật khẩu
+    Then Màn hình hiển thị đầy đủ thông tin để Nhập mật khẩu
+    When Tôi nhập mật khẩu "-+-++*-+"
     Then Thông tin vừa nhập được hiển thị vào textbox mật khẩu
     When Tôi nhấn nút 'Đăng nhập'
     Then Tôi nhìn thấy thông báo với lỗi mật khẩu sai "Mật khẩu không đúng."

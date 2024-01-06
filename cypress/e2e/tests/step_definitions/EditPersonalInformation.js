@@ -47,7 +47,7 @@ When("Tôi bấm nút 'THAY ĐỔI'", () => {
 });
 
 Then("Tôi nhận được alert thông báo 'Cập nhật thông tin tài khoản thành công'", () => {
-    // cy.url().should("contain", EditPersonalInformation.getURL);
+    cy.url().should("contain", EditPersonalInformation.getURL);
     cy.xpath("//div[@class='light-box-content center']")
         .should("be.visible")
         .and("contain", "Cập nhật thông tin tài khoản thành công");
@@ -59,6 +59,10 @@ Then("Tôi nhìn thấy thông báo với lỗi khi để trống tất cả cá
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi chỉnh sửa họ tên của người dùng không thành công khi nhập vào trường với 3 ký tự là chữ hoa và chữ thường {string}", (errorMessage) => {
+    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+});
+
+Then("Tôi nhìn thấy thông báo với lỗi khi chỉnh sửa họ tên của người dùng không thành công khi nhập vào trường với 50 ký tự là chữ hoa và chữ thường {string}", (errorMessage) => {
     cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
 });
 
@@ -75,5 +79,29 @@ Then("Tôi nhìn thấy thông báo với lỗi khi khi để trống trường 
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi chỉ nhập họ tên {string}", (errorMessage) => {
+    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+});
+
+Then("Tôi nhìn thấy thông báo với lỗi khi khi để trống trường ngày sinh {string}", (errorMessage) => {
+    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+});
+
+Then("Tôi nhìn thấy thông báo với lỗi khi chỉ nhập ngày sinh {string}", (errorMessage) => {
+    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+});
+
+Then("Tôi nhìn thấy thông báo với lỗi khi khi để trống trường địa chỉ {string}", (errorMessage) => {
+    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+});
+
+Then("Tôi nhìn thấy thông báo với lỗi khi chỉ nhập địa chỉ {string}", (errorMessage) => {
+    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+});
+
+Then("Tôi nhìn thấy thông báo với lỗi khi khi để trống trường nghề nghiệp {string}", (errorMessage) => {
+    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+});
+
+Then("Tôi nhìn thấy thông báo với lỗi khi chỉ nhập nghề nghiệp {string}", (errorMessage) => {
     cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
 });

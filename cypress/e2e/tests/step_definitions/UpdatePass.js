@@ -76,11 +76,11 @@ Then("Tôi nhìn thấy thông báo với lỗi khi không nhập mật khẩu m
     cy.xpath(UpdatePass.getErr_MSG).should("be.visible").contains(errorMessage);
 });
 
-Then("Tôi nhìn thấy thông báo với lỗi khi không nhập mật khẩu mới và nhập lại mật khẩu mới {string}", (errorMessage) => {
+Then("Tôi nhìn thấy thông báo với lỗi khi không nhập mật khẩu mới và nhập lại xác nhận mật khẩu mới {string}", (errorMessage) => {
     cy.xpath(UpdatePass.getErr_MSG).should("be.visible").contains(errorMessage);
 });
 
-Then("Tôi nhìn thấy thông báo với lỗi khi nhập mật khẩu mới và không nhập lại mật khẩu mới {string}", (errorMessage) => {
+Then("Tôi nhìn thấy thông báo với lỗi khi nhập mật khẩu mới và không nhập lại xác nhận mật khẩu mới {string}", (errorMessage) => {
     cy.xpath(UpdatePass.getErr_MSG).should("be.visible").contains(errorMessage);
 });
 
