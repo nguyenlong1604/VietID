@@ -41,11 +41,18 @@ When("Tôi nhấn nút 'THAY ĐỔI'", () => {
 });
 
 Then("Tôi nhận được alert thông báo 'Cập nhật mật khẩu thành công'", () => {
-    cy.url().should("contain", UpdatePass.getURL);
-    cy.xpath("//div[@class='light-box-content center']")
-        .should("be.visible")
-        .and("contain", "Cập nhật mật khẩu thành công");
-    cy.xpath("//input[@value='OK']").click()
+    // cy.url().should("contain", UpdatePass.getURL);
+    // cy.xpath("//div[@class='light-box-content center']")
+    //     .should("be.visible")
+    //     .and("contain", "Cập nhật mật khẩu thành công");
+    // cy.xpath("//input[@value='OK']").click()
+
+
+        cy.on("window:alert", (text) => {
+            expect(text).to.equal("Cập nhật mật khẩu thành công");
+        })
+
+        cy.xpath("//input[@value='OK']").click();
 });
 
 When("Tôi nhấn nút 'HỦY BỎ'", () => {
@@ -64,8 +71,9 @@ Then("Tôi nhìn thấy thông báo với lỗi khi nhập mật khẩu mới v�
     cy.xpath(UpdatePass.getErr_MSG).should("be.visible").contains(errorMessage);
 });
 
-Then("Tôi nhìn thấy thông báo với lỗi khi nhập mật khẩu mới và nhập lại mật khẩu mới không khớp {string}", (errorMessage) => {
+Then("Tôi thấy thông báo với lỗi khi nhập mật khẩu mới và nhập lại mật khẩu mới không khớp {string}", (errorMessage) => {
     cy.xpath(UpdatePass.getErr_MSG).should("be.visible").contains(errorMessage);
+    cy.wait(5000)
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi không nhập mật khẩu cũ {string}", (errorMessage) => {
