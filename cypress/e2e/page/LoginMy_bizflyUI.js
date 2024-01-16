@@ -1,4 +1,4 @@
-const URL = "https://go.vietid.net/oauth/bizfly2020/login"
+const URL = "https://my.bizfly.vn/embed/login?type_view=&amp;is_login=0"
 const USERNAME = "//input[@placeholder='Nhập Email hoặc SĐT tài khoản VietID của bạn']"
 const NEXT_BUTTON = ".btn.btn-block.btn-blue.font-Sarabun-Bold.font16.btn-next-icon"
 const ERR_ACC = "//span[@class='text-danger']"
