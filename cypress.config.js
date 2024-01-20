@@ -10,7 +10,9 @@ async function setupNodeEvents(on, config) {
 }
 
 module.exports = defineConfig({
-  projectId: "yxn4z1",
+  projectId: "osyypv",   //npx cypress run --record --key 91db990f-bcfc-455a-a9db-f66b43259416
+  // projectId: "qnkvt3",   //nguyenlong1604444@gmail.com//npx cypress run --record --key 11ea5b0c-a788-47f2-b041-af74aa22f509
+  // projectId: "yxn4z1",
 
   e2e: {
     chromeWebSecurity: false,

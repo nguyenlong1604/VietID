@@ -9,7 +9,6 @@ Given("Tôi đã mở trang đăng nhập VietID", function () {
   cy.visit(Login.getURL_ACC);
   cy.xpath("//li[@class='one']").should("be.visible").and("contain", "Chỉ cần duy nhất một tài khoản ViệtID !")
   cy.xpath("//li[@class='two']").should("be.visible").and("contain", "Bạn có thể đăng nhập các website & các ứng dụng trên di động")
-  cy.viewport(1100, 700);
 });
 
 When("Tôi nhập username {string}", (user) => {

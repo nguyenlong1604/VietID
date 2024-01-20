@@ -9,7 +9,6 @@ When("Người dùng chọn tùy chọn 'Đổi avatar'", () => {
 
 Then("Màn hình hiển thị để 'Đổi avatar'", () => {
     cy.get(UpdateAvatar.getFile_Upload).selectFile("C:\\Users\\ACER\\OneDrive\\Máy tính\\DATN\\74605728-8e547a80-50c2-11ea-8549-b804ef9b4996.png", {force: true});
-    // cy.wait(1000);
 });
 
 Then("Màn hình hiển thị để 'Đổi avatar' chọn ảnh 100kb", () => {
@@ -44,11 +43,12 @@ When("Tôi nhấn nút 'Cập nhật'", () => {
     cy.xpath(UpdateAvatar.getUpload_IMG_BTN).click();
 });
 
+Then("Avatar 'Cập nhật' thành công", () => {
+    cy.xpath(UpdateAvatar.getCheck_IMG).should("exist");
+});
+
 When("Tôi nhấn nút 'Hủy'", () => {
     cy.xpath(UpdateAvatar.getCancel_IMG_BTN).click();
 })
 
-Then("Avatar 'Cập nhật' thành công", () => {
-    // cy.wait(1000);
-    cy.xpath(UpdateAvatar.getCheck_IMG).should("exist");
-});
+

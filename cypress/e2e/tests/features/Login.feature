@@ -124,23 +124,23 @@ Feature: Đăng nhập VietID
     Then Tôi nhìn thấy thông báo với lỗi mật khẩu sai "Mật khẩu không đúng."
 
   # Scenario: Đăng nhập tài khoản không thành công
-  #  Given Tôi đã mở trang đăng nhập VietID
-  #  When Tôi nhập username '<username>'
+  #   Given Tôi đã mở trang đăng nhập VietID
+  #   When Tôi nhập username '<username>'
   #   Then Thông tin vừa nhập được hiển thị vào textbox username
   #   When Tôi nhấn nút 'Tiếp tục'
-    # Then Tôi chuyển sang màn hình hiển thị nhập mật khẩu
-    # Then Màn hình hiển thị đầy đủ thông tin để Nhập mật khẩu
-    # When Tôi nhập mật khẩu '<password>'
-    # Then Thông tin vừa nhập được hiển thị vào textbox mật khẩu
-    # When Tôi nhấn nút 'Đăng nhập'
-    # Then Tôi nhìn thấy thông báo với lỗi '<errorMessage>'
-    # Examples:
-    #  | username           | password    | errorMessage                                                              |
-    #  | 3113232         | Long1604@@  | Số điện thoại không hợp lệ! |
-    #  |                    | Long1604@@  | Vui lòng nhập email hoặc số điện thoại.          |
-    #  | longzzzbingmail.com| Long1604@@  | Hiển thị thông báo lỗi- Số điện thoại không hợp lệ!                       | 
-    #  | @gmail.com         | Long1604@@  | Hiển thị thông báo lỗi - Email không hợp lệ!                              |           
-    #  | 55662472           | Long1604@@  | Hiển thị thông báo lỗi - Số điện thoại không hợp lệ!                      |
-    #  | 08556624           | Long1604@@  | Hiển thị thông báo lỗi - Số điện thoại không hợp lệ!                      |
-    #  | 0855662472         |             | Hiển thị thông báo lỗi - Vui lòng nhập mật khẩu.                          |
-    #  | 0855662472         | -+--------- | Hiển thị thông báo lỗi - Mật khẩu không đúng.                             |
+  #   Then Tôi chuyển sang màn hình hiển thị nhập mật khẩu
+  #   Then Màn hình hiển thị đầy đủ thông tin để Nhập mật khẩu
+  #   When Tôi nhập mật khẩu '<password>'
+  #   Then Thông tin vừa nhập được hiển thị vào textbox mật khẩu
+  #   When Tôi nhấn nút 'Đăng nhập'
+  #   Then Tôi nhìn thấy thông báo với lỗi '<errorMessage>'
+  #   Examples: 
+  #     | username            | password    | errorMessage                                         |
+  #     |             3113232 | Long1604@@  | Số điện thoại không hợp lệ!                          |
+  #     |                     | Long1604@@  | Vui lòng nhập email hoặc số điện thoại.              |
+  #     | longzzzbingmail.com | Long1604@@  | Hiển thị thông báo lỗi- Số điện thoại không hợp lệ!  |
+  #     | @gmail.com          | Long1604@@  | Hiển thị thông báo lỗi - Email không hợp lệ!         |
+  #     |            55662472 | Long1604@@  | Hiển thị thông báo lỗi - Số điện thoại không hợp lệ! |
+  #     |            08556624 | Long1604@@  | Hiển thị thông báo lỗi - Số điện thoại không hợp lệ! |
+  #     |          0855662472 |             | Hiển thị thông báo lỗi - Vui lòng nhập mật khẩu.     |
+  #     |          0855662472 | -+--------- | Hiển thị thông báo lỗi - Mật khẩu không đúng.        |

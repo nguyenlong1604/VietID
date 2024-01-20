@@ -48,12 +48,6 @@ When("Tôi bấm nút 'THAY ĐỔI'", () => {
 
 Then("Tôi nhận được alert thông báo 'Cập nhật thông tin tài khoản thành công'", () => {
     cy.url().should("contain", EditPersonalInformation.getURL);
-    // cy.xpath("//div[@class='light-box-content center']")
-    //     .should("be.visible")
-    //     .and("contain", "Cập nhật thông tin tài khoản thành công");
-    // cy.xpath("//input[@value='OK']").click()
-
-
         cy.on("window:alert", (text) => {
             expect(text).to.equal("Cập nhật thông tin tài khoản thành công");
         })

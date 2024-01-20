@@ -67,7 +67,7 @@ Feature: Cập nhật mật khẩu
     When Tôi nhập mật khẩu mới với mật khẩu = "Long1604@@@@@@@@@@@@@@@@@@@@@@@@#"
     When Tôi nhập xác nhận mật khẩu mới với mật khẩu = "Long1604@@@@@@@@@@@@@@@@@@@@@@@@#"
     When Tôi nhấn nút 'THAY ĐỔI'
-    Then Tôi nhìn thấy thông báo với lỗi khi nhập mật khẩu mới với độ dài 33 ký tự "Mật khẩu không hợp lệ (từ 5-32 ký tự)."
+    Then Tôi nhìn thấy thông báo với lỗi khi nhập mật khẩu mới với độ dài 33 ký tự "Mật khẩu không hợp lệ (từ 8-32 ký tự)."
 
  Scenario: Cập nhật mật khẩu không thành công khi nhập mật khẩu mới và nhập lại mật khẩu mới không khớp
     Given Tôi truy cập vào website và login thành công với username = "0855662472" và password = "Long1604@@"
@@ -78,7 +78,7 @@ Feature: Cập nhật mật khẩu
     When Tôi nhập mật khẩu mới với mật khẩu = "Lon"
     When Tôi nhập xác nhận mật khẩu mới với mật khẩu = "L"
     When Tôi nhấn nút 'THAY ĐỔI'
-    Then Tôi thấy thông báo với lỗi khi nhập mật khẩu mới và nhập lại mật khẩu mới không khớp "Mật khẩu xác nhận không trùng khớp"
+    Then Tôi thấy thông báo với lỗi khi nhập mật khẩu mới và nhập lại mật khẩu mới không khớp "Mật khẩu xác nhận không khớp"
 
   Scenario: Cập nhật mật khẩu không thành công khi không nhập mật khẩu cũ
     Given Tôi truy cập vào website và login thành công với username = "0855662472" và password = "Long1604@@"

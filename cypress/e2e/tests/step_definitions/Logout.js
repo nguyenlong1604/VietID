@@ -3,11 +3,11 @@ import LogoutUI from "../../page/LogoutUI";
 
 const Logout = new LogoutUI();
 
-When("Người dùng chọn tùy chọn button 'Avatar'", () => {
+When("Người dùng chọn tùy chọn button 'Menu'", () => {
     cy.xpath(Logout.getAvatar_CLICK).click();
 });
 
-Then("Màn hình hiển thị đầy đủ thông tin của 'Avatar'", () => {
+Then("Màn hình hiển thị đầy đủ thông tin của 'Menu'", () => {
     cy.url().should("contain", Logout.getURL);
     cy.xpath("//li[@class='user-dropdown-first-info-name']").should("exist");
     cy.xpath("//li[@class='user-dropdown-first-info-email']").should("exist");

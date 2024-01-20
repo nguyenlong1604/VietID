@@ -1,5 +1,6 @@
 Feature: Chỉnh sửa thông tin cá nhân
 
+  @smoke
   Scenario: Kiểm tra chỉnh sửa khi nhập giá trị hợp lệ vào form thành công
     Given Tôi truy cập vào website và login thành công với username = "0855662472" và password = "Long1604@@"
     Then Màn hình hiển thị đầy đủ thông tin Profile người dùng
@@ -64,7 +65,7 @@ Feature: Chỉnh sửa thông tin cá nhân
       | fullname                                           | sex | dateofbirth | address | job       |
       | Abcccccccccccccccccccccccccccccccccccccccccccccccc | Nam |  16-04-2001 | Hà Nội  | Sinh viên |
     When Tôi bấm nút 'THAY ĐỔI'
-    Then Tôi nhìn thấy thông báo với lỗi khi chỉnh sửa họ tên của người dùng không thành công khi nhập vào trường với 50 ký tự là chữ hoa và chữ thường "Tên hiển thị tối đa 30 ký tự"
+    Then Tôi nhận được alert thông báo 'Cập nhật thông tin tài khoản thành công'
 
   Scenario: Kiểm tra khi chỉnh sửa họ tên của người dùng không thành công khi nhập vào trường với 51 ký tự là chữ hoa và chữ thường
     Given Tôi truy cập vào website và login thành công với username = "0855662472" và password = "Long1604@@"
@@ -75,7 +76,7 @@ Feature: Chỉnh sửa thông tin cá nhân
       | fullname                                            | sex | dateofbirth | address | job       |
       | Abccccccccccccccccccccccccccccccccccccccccccccccccc | Nam |  16-04-2001 | Hà Nội  | Sinh viên |
     When Tôi bấm nút 'THAY ĐỔI'
-    Then Tôi nhìn thấy thông báo với lỗi khi chỉnh sửa họ tên của người dùng không thành công khi nhập vào trường với 51 ký tự là chữ hoa và chữ thường "Tên hiển thị tối đa 30 ký tự"
+    Then Tôi nhìn thấy thông báo với lỗi khi chỉnh sửa họ tên của người dùng không thành công khi nhập vào trường với 51 ký tự là chữ hoa và chữ thường "Họ tên không hợp lệ (từ 4-50 ký tự)."
 
   Scenario: Kiểm tra chỉnh sửa họ tên của người dùng không thành công khi nhập ký tự đặc biệt vào trường họ tên
     Given Tôi truy cập vào website và login thành công với username = "0855662472" và password = "Long1604@@"
