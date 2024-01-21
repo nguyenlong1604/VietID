@@ -13,7 +13,6 @@ Given("Tôi đã mở trang đăng nhập VietID", function () {
 
 When("Tôi nhập username {string}", (user) => {
   username = user;
-  //if (user)
   cy.get(Login.getUserName).clear();
   if (username) {
     cy.get(Login.getUserName).should("be.enabled").type(username).should('have.value', username).and('have.value', username);
@@ -44,7 +43,6 @@ Then("Màn hình hiển thị đầy đủ thông tin để Nhập mật khẩu"
 
 When("Tôi nhập mật khẩu {string}", (pass) => {
   password = pass;
-  //if (pass)
   cy.get(Login.getPassWord).clear();
   if (password) {
     cy.get(Login.getPassWord).should("be.enabled").type(password).should('have.value', password).and('have.value', password);
@@ -128,9 +126,3 @@ Given("Tôi truy cập vào website và login thành công với username = {str
   cy.get(Login.getBTN_Login).click();
   cy.url().should("contain", "https://vietid.net/user/profile");
 })
-
-
-// Then("Tôi nhìn thấy thông báo với lỗi {string}", (errorMessage) => {
-//   if (errorMessage)
-//   cy.xpath(Login.getERR_ACC()).should("be.visible").contains(errorMessage);
-// });
