@@ -20,6 +20,6 @@ module.exports = defineConfig({
     specPattern: "**/*.feature", // setup cucumber feature
     setupNodeEvents,
     defaultCommandTimeout: 10000,
-    pageLoadTimeout: 30000,
+    pageLoadTimeout: 60000,
   },
 });

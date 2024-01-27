@@ -18,9 +18,10 @@ When("Tôi login thành công vào trang My_bizfly với tài khoản {string} v
 })
 
 Then("Tôi đăng nhập vào tài khoản thành công", () => {
-  cy.xpath(LoginMy_bizfly.getBTN_Login).click();
-  cy.wait(3000)
-  cy.visit("https://my.bizfly.vn/")
+    cy.xpath(LoginMy_bizfly.getBTN_Login).click();
+    cy.wait(4000);
+    cy.visit("https://my.bizfly.vn/");
+    cy.get('.btn_action').contains("Bắt đầu").click({force:true});
 })
 
 Then("Tôi nhìn thấy msg với lỗi tài khoản không tồn tại {string}", (errorMessage) => {
