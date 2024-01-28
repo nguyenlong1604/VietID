@@ -5,6 +5,7 @@ const ERR_ACC = "//span[@class='text-danger']"
 const PASSWORD = "//input[@id='show-pass']"
 const ERR_PASS = "//span[@class='text-danger']"
 const BTN_LOGIN = "//button[contains(text(),'Đăng nhập bằng ViệtID')]"
+const URL_MYBIZFLY = "https://my.bizfly.vn/"
 
 export default class LoginMy_bizfly {
   get getURL() {
@@ -33,6 +34,10 @@ export default class LoginMy_bizfly {
 
   get getBtnLogin() {
     return BTN_LOGIN;
+  }
+
+  get getUrlMybizfly() {
+    return URL_MYBIZFLY;
   }
 }
 

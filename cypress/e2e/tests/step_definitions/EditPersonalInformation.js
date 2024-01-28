@@ -20,7 +20,7 @@ When("Nhập thông tin hợp lệ vào form", function (dataTable) {
     dataTable.hashes().forEach(data => {
         cy.get(EditPersonalInformation.getfullNameInput).clear()
         cy.get(EditPersonalInformation.getbirthDateInput).clear()
-        cy.xpath("//div[@class='popup']").click()
+        cy.xpath(EditPersonalInformation.getPopup).click()
         cy.get(EditPersonalInformation.getaddressInput).clear()
         cy.get(EditPersonalInformation.getjobInput).clear()
         if (data.fullname) {
@@ -52,7 +52,7 @@ Then("Tôi nhận được alert thông báo 'Cập nhật thông tin tài kho�
             expect(text).to.equal("Cập nhật thông tin tài khoản thành công");
         })
 
-        cy.xpath("//input[@value='OK']").click();
+        cy.xpath(EditPersonalInformation.getOk).click();
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi để trống tất cả các trường trong form {string}", (errorMessage) => {

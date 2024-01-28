@@ -8,6 +8,8 @@ const JOB_INPUT = "input[name='job']"
 const CHANGE_BTN= "//button[contains(text(),'THAY ĐỔI')]";
 const CANCEL_BTN = ".btn.btnblue.center"
 const ERR_UPDATE = "//p[@id='err-update']"
+const POPUP = "//div[@class='popup']"
+const OK = "//input[@value='OK']"
 
 export default class EditPersonalInformation {
     get getURL() {
@@ -47,5 +49,13 @@ export default class EditPersonalInformation {
 
     get getErrUpdate() {
         return ERR_UPDATE;
+    }
+
+    get getPopup() {
+        return POPUP
+    }
+
+    get getOk() {
+        return OK
     }
 }

@@ -7,6 +7,7 @@ const CHANGE_BTN = "//button[contains(text(),'THAY ĐỔI')]";
 const CANCEL_BTN = "//button[contains(text(),'HỦY BỎ')]"
 const ERR_MSG = "//p[@id='err-changepass']"
 const OK = "//input[@value='OK']"
+const TITLE = "//div[@class='title']"
 
 export default class UpdatePass {
     get getUrl() {
@@ -43,5 +44,9 @@ export default class UpdatePass {
 
     get getOk() {
         return OK
+    }
+
+    get getTitle() {
+        return TITLE
     }
 }

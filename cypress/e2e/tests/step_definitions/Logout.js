@@ -9,10 +9,10 @@ When("Người dùng chọn tùy chọn button 'Menu'", () => {
 
 Then("Màn hình hiển thị đầy đủ thông tin của 'Menu'", () => {
     cy.url().should("contain", Logout.getURL);
-    cy.xpath("//li[@class='user-dropdown-first-info-name']").should("exist");
-    cy.xpath("//li[@class='user-dropdown-first-info-email']").should("exist");
-    cy.xpath("//a[contains(text(),'Thêm tài khoản')]").should("exist");
-    cy.xpath("//a[@id='logout-click']").should("exist");
+    cy.xpath(Logout.getInfoName).should("exist");
+    cy.xpath(Logout.getInfoEmail).should("exist");
+    cy.xpath(Logout.getAddAcc).should("exist");
+    cy.xpath(Logout.getLogoutClick).should("exist");
 })
 
 When("Người dùng chọn 'Đăng xuất'", () => {
@@ -20,9 +20,9 @@ When("Người dùng chọn 'Đăng xuất'", () => {
 });
 
 Then("Tôi nhìn thấy trang Đăng nhập tài khoản", () => {
-    cy.url().should("contain", "https://vietid.net/login/chooseAccount");
+    cy.url().should("contain", Logout.getChooseAcc);
 });
 
 When("Người dùng không chọn 'Đăng xuất'", () => {
-    cy.xpath("//h3[contains(text(),'Thông tin bảo mật')]").click();
+    cy.xpath(Logout.getInfoSecurity).click();
 });

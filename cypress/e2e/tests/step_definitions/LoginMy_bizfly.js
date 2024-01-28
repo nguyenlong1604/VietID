@@ -20,7 +20,7 @@ When("Tôi login thành công vào trang My_bizfly với tài khoản {string} v
 Then("Tôi đăng nhập vào tài khoản thành công", () => {
     cy.xpath(LoginMy_bizfly.getBtnLogin).click();
     cy.wait(4000);
-    cy.visit("https://my.bizfly.vn/");
+    cy.visit(LoginMy_bizfly.getUrlMybizfly);
     cy.get('.btn_action').contains("Bắt đầu").click({force:true});
 })
 

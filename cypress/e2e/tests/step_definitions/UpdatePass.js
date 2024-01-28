@@ -12,7 +12,7 @@ When("Người dùng chọn tùy chọn 'Cập nhật'", () => {
 });
 
 Then("Màn hình hiển thị đầy đủ thông tin để Cập nhật mật khẩu", () => {
-    cy.xpath("//div[@class='title']").should("be.visible").and("contain", "Cập nhật mật khẩu !");
+    cy.xpath(UpdatePass.getTitle).should("be.visible").and("contain", "Cập nhật mật khẩu !");
     cy.xpath(UpdatePass.getEnterOldPasswordInput).should("be.enabled").clear()
     cy.xpath(UpdatePass.getNewPasswordInput).should("be.enabled").clear()
     cy.xpath(UpdatePass.getConfirmNewPasswordInput).should("be.enabled").clear()
@@ -46,7 +46,6 @@ Then("Tôi nhận được alert thông báo 'Cập nhật mật khẩu thành c
             expect(text).to.equal("Cập nhật mật khẩu thành công");
         })
         cy.xpath(UpdatePass.getOk).click();
-        // cy.xpath("//input[@value='OK']").click();
 });
 
 When("Tôi nhấn nút 'HỦY BỎ'", () => {

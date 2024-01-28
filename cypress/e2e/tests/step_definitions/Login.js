@@ -7,8 +7,8 @@ let password;
 
 Given("Tôi đã mở trang đăng nhập VietID", function () {
   cy.visit(Login.getUrlAcc);
-  cy.xpath("//li[@class='one']").should("be.visible").and("contain", "Chỉ cần duy nhất một tài khoản ViệtID !")
-  cy.xpath("//li[@class='two']").should("be.visible").and("contain", "Bạn có thể đăng nhập các website & các ứng dụng trên di động")
+  cy.xpath(Login.getLabelOne).should("be.visible").and("contain", "Chỉ cần duy nhất một tài khoản ViệtID !")
+  cy.xpath(Login.getLabelTwo).should("be.visible").and("contain", "Bạn có thể đăng nhập các website & các ứng dụng trên di động")
 });
 
 When("Tôi nhập username {string}", (user) => {
@@ -34,8 +34,8 @@ Then("Tôi chuyển sang màn hình hiển thị nhập mật khẩu", () => {
 
 Then("Màn hình hiển thị đầy đủ thông tin để Nhập mật khẩu", () => {
   cy.url().should("contain", Login.getUrlPass);
-  cy.xpath("//li[@class='one']").should("be.visible").and("contain", "Chỉ cần duy nhất một tài khoản ViệtID !")
-  cy.xpath("//li[@class='two']").should("be.visible").and("contain", "Bạn có thể đăng nhập các website & các ứng dụng trên di động")
+  cy.xpath(Login.getLabelOne).should("be.visible").and("contain", "Chỉ cần duy nhất một tài khoản ViệtID !")
+  cy.xpath(Login.getLabelTwo).should("be.visible").and("contain", "Bạn có thể đăng nhập các website & các ứng dụng trên di động")
   cy.get(Login.getPassWord).should("be.enabled")
   cy.get(Login.getBtnLogin).should("be.visible")
 
@@ -59,7 +59,7 @@ When("Tôi nhấn nút 'Đăng nhập'", () => {
 });
 
 Then("Tôi nhìn thấy trang Profile", () => {
-  cy.url().should("contain", "https://vietid.net/user/profile");
+  cy.url().should("contain", Login.getUrlProfile);
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi tài khoản không tồn tại {string}", (errorMessage) => {
@@ -124,5 +124,5 @@ Given("Tôi truy cập vào website và login thành công với username = {str
   cy.url().should("contain", Login.getUrlPass);
   cy.get(Login.getPassWord).should('have.value', password);
   cy.get(Login.getBtnLogin).click();
-  cy.url().should("contain", "https://vietid.net/user/profile");
+  cy.url().should("contain", Login.getUrlProfile);
 })
