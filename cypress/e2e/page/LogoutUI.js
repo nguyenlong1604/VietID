@@ -6,11 +6,11 @@ export default class Logout {
     get getURL() {
         return URL;
     }
-    get getAvatar_CLICK() {
+    get getAvatarClick() {
         return AVATAR;
     }
 
-    get getLogout_CLICK() {
+    get getLogoutClick() {
         return LOG_OUT
     }
 }

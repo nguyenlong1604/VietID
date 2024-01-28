@@ -9,39 +9,39 @@ const ERR_MSG = "//p[@id='err-changepass']"
 const OK = "//input[@value='OK']"
 
 export default class UpdatePass {
-    get getURL() {
+    get getUrl() {
         return URL;
     }
 
-    get getUpdate_BTN() {
+    get getUpdateBtn() {
         return UPDATE_BTN
     }
 
-    get getEnter_Old_Password_Input() {
+    get getEnterOldPasswordInput() {
         return ENTER_OLD_PASSWORD_INPUT
     }
 
-    get getNew_Password_Input() {
+    get getNewPasswordInput() {
         return NEW_PASSWORD_INPUT
     }
 
-    get getConfirm_New_Password_Input() {
+    get getConfirmNewPasswordInput() {
         return CONFIRM_NEW_PASSWORD_INPUT
     }
 
-    get getChange_BTN() {
+    get getChangeBtn() {
         return CHANGE_BTN
     }
 
-    get getCancel_BTN() {
+    get getCancelBtn() {
         return CANCEL_BTN
     }
 
-    get getErr_MSG () {
+    get getErrMsg() {
         return ERR_MSG
     }
 
-    get getOK () {
+    get getOk() {
         return OK
     }
 }

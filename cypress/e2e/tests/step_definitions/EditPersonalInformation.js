@@ -5,7 +5,7 @@ import moment from 'moment';
 const EditPersonalInformation = new EditPersonalInformationUI();
 
 When("Người dùng chọn tùy chọn 'Chỉnh sửa'", () => {
-    cy.xpath(EditPersonalInformation.getEdit_BTN).click();
+    cy.xpath(EditPersonalInformation.getEditBtn).click();
 });
 
 Then("Tôi chuyển sang màn hình Chỉnh sửa thông tin tài khoản và Màn hình hiển thị đầy đủ thông tin", () => {
@@ -43,7 +43,7 @@ When("Nhập thông tin hợp lệ vào form", function (dataTable) {
 });
 
 When("Tôi bấm nút 'THAY ĐỔI'", () => {
-    cy.xpath(EditPersonalInformation.getChange_BTN).click();
+    cy.xpath(EditPersonalInformation.getChangeBtn).click();
 });
 
 Then("Tôi nhận được alert thông báo 'Cập nhật thông tin tài khoản thành công'", () => {
@@ -56,53 +56,53 @@ Then("Tôi nhận được alert thông báo 'Cập nhật thông tin tài kho�
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi để trống tất cả các trường trong form {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+    cy.xpath(EditPersonalInformation.getErrUpdate).should("be.visible").contains(errorMessage);
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi chỉnh sửa họ tên của người dùng không thành công khi nhập vào trường với 3 ký tự là chữ hoa và chữ thường {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+    cy.xpath(EditPersonalInformation.getErrUpdate).should("be.visible").contains(errorMessage);
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi chỉnh sửa họ tên của người dùng không thành công khi nhập vào trường với 50 ký tự là chữ hoa và chữ thường {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+    cy.xpath(EditPersonalInformation.getErrUpdate).should("be.visible").contains(errorMessage);
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi chỉnh sửa họ tên của người dùng không thành công khi nhập vào trường với 51 ký tự là chữ hoa và chữ thường {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+    cy.xpath(EditPersonalInformation.getErrUpdate).should("be.visible").contains(errorMessage);
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi khi nhập ký tự đặc biệt vào trường họ tên {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+    cy.xpath(EditPersonalInformation.getErrUpdate).should("be.visible").contains(errorMessage);
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi khi để trống trường họ tên {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+    cy.xpath(EditPersonalInformation.getErrUpdate).should("be.visible").contains(errorMessage);
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi chỉ nhập họ tên {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+    cy.xpath(EditPersonalInformation.getErrUpdate).should("be.visible").contains(errorMessage);
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi khi để trống trường ngày sinh {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+    cy.xpath(EditPersonalInformation.getErrUpdate).should("be.visible").contains(errorMessage);
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi chỉ nhập ngày sinh {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+    cy.xpath(EditPersonalInformation.getErrUpdate).should("be.visible").contains(errorMessage);
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi khi để trống trường địa chỉ {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+    cy.xpath(EditPersonalInformation.getErrUpdate).should("be.visible").contains(errorMessage);
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi chỉ nhập địa chỉ {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+    cy.xpath(EditPersonalInformation.getErrUpdate).should("be.visible").contains(errorMessage);
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi khi để trống trường nghề nghiệp {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+    cy.xpath(EditPersonalInformation.getErrUpdate).should("be.visible").contains(errorMessage);
 });
 
 Then("Tôi nhìn thấy thông báo với lỗi khi chỉ nhập nghề nghiệp {string}", (errorMessage) => {
-    cy.xpath(EditPersonalInformation.getERR_Update).should("be.visible").contains(errorMessage);
+    cy.xpath(EditPersonalInformation.getErrUpdate).should("be.visible").contains(errorMessage);
 });

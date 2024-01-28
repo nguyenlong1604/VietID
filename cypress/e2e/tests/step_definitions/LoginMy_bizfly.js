@@ -18,17 +18,17 @@ When("Tôi login thành công vào trang My_bizfly với tài khoản {string} v
 })
 
 Then("Tôi đăng nhập vào tài khoản thành công", () => {
-    cy.xpath(LoginMy_bizfly.getBTN_Login).click();
+    cy.xpath(LoginMy_bizfly.getBtnLogin).click();
     cy.wait(4000);
     cy.visit("https://my.bizfly.vn/");
     cy.get('.btn_action').contains("Bắt đầu").click({force:true});
 })
 
 Then("Tôi nhìn thấy msg với lỗi tài khoản không tồn tại {string}", (errorMessage) => {
-  cy.xpath(LoginMy_bizfly.getERR_ACC).should("be.visible").contains(errorMessage);
+  cy.xpath(LoginMy_bizfly.getErrAcc).should("be.visible").contains(errorMessage);
 });
 
 Then("Tôi nhìn thấy msg với lỗi mật khẩu không tồn tại {string}", (errorMessage) => {
-  cy.xpath(LoginMy_bizfly.getBTN_Login).click();
-  cy.xpath(LoginMy_bizfly.getERR_PASS).should("be.visible").contains(errorMessage);
+  cy.xpath(LoginMy_bizfly.getBtnLogin).click();
+  cy.xpath(LoginMy_bizfly.getErrPass).should("be.visible").contains(errorMessage);
 });

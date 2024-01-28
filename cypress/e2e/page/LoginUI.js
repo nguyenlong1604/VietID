@@ -8,7 +8,7 @@ const ERR_PASS = "//div[@class='warning error-message']"
 const BTN_LOGIN = ".index-login";
 
 export default class Login {
-    get getURL_ACC() {
+    get getUrlAcc() {
         return URLACC;
     }
 
@@ -20,11 +20,11 @@ export default class Login {
         return NEXT_BUTTON;
     }
 
-    get getERR_ACC() {
+    get getErrAcc() {
         return ERR_ACC;
     }
 
-    get getURL_PASS() {
+    get getUrlPass() {
         return URLPASS;
     }
 
@@ -32,11 +32,11 @@ export default class Login {
         return PASSWORD;
     }
 
-    get getERR_PASS() {
+    get getErrPass() {
         return ERR_PASS;
     }
 
-    get getBTN_Login() {
+    get getBtnLogin() {
         return BTN_LOGIN;
     }
 }

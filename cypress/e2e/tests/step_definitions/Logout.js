@@ -4,7 +4,7 @@ import LogoutUI from "../../page/LogoutUI";
 const Logout = new LogoutUI();
 
 When("Người dùng chọn tùy chọn button 'Menu'", () => {
-    cy.xpath(Logout.getAvatar_CLICK).click();
+    cy.xpath(Logout.getAvatarClick).click();
 });
 
 Then("Màn hình hiển thị đầy đủ thông tin của 'Menu'", () => {
@@ -16,7 +16,7 @@ Then("Màn hình hiển thị đầy đủ thông tin của 'Menu'", () => {
 })
 
 When("Người dùng chọn 'Đăng xuất'", () => {
-    cy.xpath(Logout.getLogout_CLICK).click();
+    cy.xpath(Logout.getLogoutClick).click();
 });
 
 Then("Tôi nhìn thấy trang Đăng nhập tài khoản", () => {

@@ -13,39 +13,39 @@ export default class EditPersonalInformation {
     get getURL() {
         return URL;
     }
-    get getEdit_BTN() {
+    get getEditBtn() {
         return EDIT_BTN;
     }
 
     get getfullNameInput() {
-        return (FULLNAME_INPUT);
+        return FULLNAME_INPUT;
     }
 
     get getgenderSelect() {
-        return (GENDER_SELECT);
+        return GENDER_SELECT;
     }
 
     get getbirthDateInput() {
-        return (BIRTHDATE_INPUT);
+        return BIRTHDATE_INPUT;
     }
 
     get getaddressInput() {
-        return (ADDRESS_INPUT);
+        return ADDRESS_INPUT;
     }
 
     get getjobInput() {
-        return (JOB_INPUT);
+        return JOB_INPUT;
     }
 
-    get getChange_BTN () {
+    get getChangeBtn() {
         return CHANGE_BTN;
     }
 
     get getCancelButton() {
-        return (CANCEL_BTN);
+        return CANCEL_BTN;
     }
 
-    get getERR_Update () {
-        return (ERR_UPDATE)
+    get getErrUpdate() {
+        return ERR_UPDATE;
     }
 }
